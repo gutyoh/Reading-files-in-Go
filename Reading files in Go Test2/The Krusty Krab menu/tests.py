@@ -2,17 +2,14 @@ import os
 
 from hstest import StageTest, CheckResult, WrongAnswer, TestCase
 
-# Create new file "galley_grub.txt"
-with open("galley_grub.txt", "w") as f:
-    f.write("Krabby Pattie $2.00\n")
-    f.write("Krusty Combo $3.99\n")
-    f.write("Krusty Deluxe $3.00\n")
-    f.write("Seaweed Salad $1.50\n")
-    f.write("Coral Bits $1.95")
-
 inputs = [
     "Krabby Pattie $2.00\nKrusty Combo $3.99\nKrusty Deluxe $3.00\nSeaweed Salad $1.50\nCoral Bits $1.95"
 ]
+
+# Create new file "galley_grub.txt"
+with open("galley_grub.txt", "w") as f:
+    for line in inputs:
+        f.write(line)
 
 FILENAME = "galley_grub.txt"
 
